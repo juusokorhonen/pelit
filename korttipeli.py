@@ -212,7 +212,7 @@ def tulosta_pakka(pakka, arvaus=None, rivinro=None, näytä_numerot=False, oikei
 	korttien_lukumäärä = len(pakka)
 
 	if näytä_numerot:
-		print("   " + " ".join([str(x) for x in range(korttien_lukumäärä)]))
+		print("   " + " ".join([str(x+1) for x in range(korttien_lukumäärä)]))
 		print("   -" + "--"*(korttien_lukumäärä-1))
 
 	print(("{:2d} ".format(rivinro) if rivinro else "   ") + (" ".join([oikein if x else väärin for x in pakka])) + (" [{}]".format(arvaus) if arvaus is not None else ""))	
