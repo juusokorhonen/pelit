@@ -48,7 +48,7 @@ def aloita_peli(aloituskassa=100, kierrokset=10):
                     print("Et voi voittaa tätä kierrosta. Hävisit automaattisesti yhden rahan.")
                     kassa = muuta_kassaa(-1, kassa)
                 else:
-                    kerroin = int(11/erotus * 1.5 + 0.5)
+                    kerroin = max(int(11/erotus * 1.5 + 0.5), 2)
 
                     print("Kertoimesi tällä kierroksella on {:d}.".format(kerroin))
                     print("Voit voittaa 0 - {:.1f} yksikköä rahaa.".format(kerroin*kassassa_rahaa(kassa)))
@@ -116,8 +116,8 @@ ACEY-DUCEY -PELIN SÄÄNNÖT:
 TIETOKONE JAKAA KAKSI KORTTIA NUMEROPUOLI YLÖSPÄIN.
 NYT VOIT ASETTAA PANOKSEN SILLE, ETTÄ SEURAAVA JAETTU
 KORTTI OSUU NÄIDEN KAHDEN KORTIN VÄLILLE. JOS VOITAT
-SAAT PANOKSESI TUPLANA TAKAISIN. VOIT OHITTAA ASETTAMALLA
-PANOKSEN ARVOON '0'.
+SAAT PANOKSESI VÄHINTÄÄN TUPLANA TAKAISIN. VOIT OHITTAA 
+KIERROKSEN ASETTAMALLA PANOKSEN ARVOON '0'.
 
 SINULLA ON ALUSSA {} YKSIKKÖÄ RAHAA JA PELI KESTÄÄ ENIMMILLÄÄN
 {} KIERROSTA.
